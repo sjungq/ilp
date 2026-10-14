@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro'
 const courses = await getCollection('courses');
 console.log(courses);
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, ''); 
 
 ---
 <Base title="Stacy Jung - ILP Portfolio">
@@ -12,7 +13,7 @@ console.log(courses);
 	<div>
 		<ul>
 			{courses.map(course => (
-				<li><a href={`/courses/${course.id}`}>{course.data.code}: {course.data.title}</a></li>
+				<li><a href={`${baseUrl}/courses/${course.id}`}>{course.data.code}: {course.data.title}</a></li>
 			))}
 		</ul>
 	</div>
