@@ -1,0 +1,103 @@
+:root {
+  /* palette sampled from the CSUMB logo */
+  --ink: #16263b;
+  --muted: #56677c;
+  --paper: #f5f8fb;
+  --card: #ffffff;
+  --line: #dde6ef;
+  --brand: #21426b; /* logo navy ("Monterey Bay") */
+  --accent: #5594bb; /* logo blue ("Cal State") */
+  --wave: #e5eef5; /* logo wave */
+  --planned: #8a99ab;
+  --progress: #5594bb;
+  --done: #2f7d5b;
+  --radius: 10px;
+  --max: 960px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6edf4;
+    --muted: #9eb0c3;
+    --paper: #0f1826;
+    --card: #172336;
+    --line: #26364d;
+    --brand: #8fbcdc;
+    --accent: #6fa8cd;
+    --wave: #1c2c42;
+    --progress: #6fa8cd;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    17px/1.65 'Arial',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: Arial;
+  line-height: 1.2;
+  font-weight: 600;
+}
+a {
+  color: var(--brand);
+}
+img {
+  max-width: 100%;
+}
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* header */
+.site-header {
+  border-bottom: 3px solid var(--accent);
+  background: var(--card);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-block: 14px;
+  flex-wrap: wrap;
+}
+.logo {
+  height: 5rem;
+  width: auto;
+}
+.site-title {
+  font-family: Arial, Georgia, serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--brand);
+}
+.site-header nav {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+  font-size: 0.95rem;
+}
+.site-header nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-header nav a:hover {
+  color: var(--brand);
+}
+
+main {
+}

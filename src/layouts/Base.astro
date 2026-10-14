@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const YOUR_NAME = 'Stacy Jung';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · ${YOUR_NAME} ILP` : `${YOUR_NAME} · ILP Portfolio`}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <!-- Download the official logo from the CSUMB brand page and save it as public/csumb-logo.png -->
+        <a href={`${base}/`}><img class="logo" src={`${base}/csumb-logo.jpg`} alt="California State University, Monterey Bay" /></a>
+        <a class="site-title" href={`${base}/`}>{YOUR_NAME} - ILP Portfolio</a>
+        <nav>
+          <a href={`${base}/#about`}>About</a>
+          <a href={`${base}/#courses`}>Courses</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap"><slot /></main>
+  </body>
+</html>
+
