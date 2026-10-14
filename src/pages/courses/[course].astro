@@ -8,10 +8,37 @@ export async function getStaticPaths() {
     props: { course }
   }));
 }
-
 const { course } = Astro.props;
+const { assignments } = course.data;
+console.log(assignments)
 ---
 <Base title={course.data.code}>
   <h1>{course.data.code}: {course.data.title}</h1>
+  <!--Description -->
+  <section>
+    <h2>Course Description</h2>
+    <p>{course.data.description}</p>
+  </section>
+
+
+
+  <!--Assignments section -->
+  { assignments?.length > 0 && (
+    <section>
+      <h2>Assignments</h2>
+      <ul>
+        {assignments.map(a => (
+          <li>
+            <h3>{a.name}</h3>
+            <p>{a.description}</p>
+            <p><a href={a.link}>{a.link}</a></p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+    
+
 
 </Base>

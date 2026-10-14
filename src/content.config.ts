@@ -10,6 +10,15 @@ const courses = defineCollection({
     term: z.string(),
     description: z.string().optional(),
     status: z.enum(['planned', 'in-progress', 'completed']),
+    assignments: z
+      .array(
+        z.object({
+          name: z.string(),
+          description: z.string(),
+          link: z.string(),
+        }),
+      )
+      .optional(),
   }),
 });
 
