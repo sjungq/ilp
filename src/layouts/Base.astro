@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import AboutMe from '../components/AboutMe.astro';
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const YOUR_NAME = 'Stacy Jung';
@@ -29,7 +28,7 @@ const YOUR_NAME = 'Stacy Jung';
           {YOUR_NAME} - ILP Portfolio
         </a>
         <nav>
-          <a href={`${base}/#about`}>About</a>
+          <a href={`${base}/#about-me`}>About</a>
           <a href={`${base}/#courses`}>Courses</a>
         </nav>
       </div>
